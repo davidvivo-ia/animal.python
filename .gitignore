@@ -1,3 +1,42 @@
 __pycache__/
 *.pyc
-.animal_kb.json
+*.pyo
+*.pyd
+.Python
+
+# uv / virtual envs
+.venv/
+.venv.*/
+.uv/
+uv.lock.bak
+
+# build
+build/
+dist/
+*.egg-info/
+
+# coverage / tests
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.hypothesis/
+coverage.xml
+
+# tooling
+.ruff_cache/
+.mypy_cache/
+.pre-commit-cache/
+
+# editors
+.idea/
+.vscode/
+*.swp
+
+# os
+.DS_Store
+Thumbs.db
+
+# project
+~/.local/share/animal/
+animal_kb.json

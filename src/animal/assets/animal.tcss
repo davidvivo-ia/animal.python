@@ -1,0 +1,101 @@
+/* Tema ámbar fósforo. Tokens documentados en docs/design.md. */
+
+Screen {
+    background: #1A1410;
+    color: #E8D4B8;
+}
+
+Header {
+    background: #231A14;
+    color: #F2B233;
+    border-bottom: heavy #574236;
+    padding: 0 2;
+}
+
+Footer {
+    background: #231A14;
+    color: #8B7355;
+}
+
+#splash-banner {
+    color: #F2B233;
+    text-style: bold;
+    align: center middle;
+    padding: 2 0;
+    width: 100%;
+    height: auto;
+}
+
+#splash-subtitle {
+    color: #8B7355;
+    align: center middle;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1;
+}
+
+#main-panel {
+    border: round #574236;
+    padding: 1 2;
+    margin: 1 2;
+    background: #231A14;
+}
+
+#question-text {
+    color: #F2B233;
+    text-style: bold;
+    padding: 1 0;
+}
+
+#breadcrumbs {
+    color: #8B7355;
+    text-style: italic;
+    padding-top: 1;
+}
+
+#feedback {
+    color: #7FB069;
+    text-style: bold;
+    padding: 1 0;
+}
+
+#error {
+    color: #E07A5F;
+    text-style: bold;
+    padding: 1 0;
+}
+
+Input {
+    background: #1A1410;
+    color: #E8D4B8;
+    border: tall #574236;
+}
+
+Input:focus {
+    border: tall #F2B233;
+}
+
+Button {
+    background: #574236;
+    color: #E8D4B8;
+    border: none;
+    padding: 0 2;
+    min-width: 12;
+}
+
+Button.-primary {
+    background: #F2B233;
+    color: #1A1410;
+}
+
+Button:hover {
+    text-style: bold;
+}
+
+.chip {
+    background: #231A14;
+    color: #E8D4B8;
+    border: round #574236;
+    padding: 0 1;
+    margin: 0 1 0 0;
+}
