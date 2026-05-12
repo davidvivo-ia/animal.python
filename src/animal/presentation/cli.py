@@ -70,7 +70,8 @@ def main(
     path = db or default_db_path()
     repository = JsonRepository(path=path)
     session = GameSession.open(repository)
-    if reset:
+    # `--demo` siempre parte de un árbol limpio para ser determinista.
+    if reset or demo:
         session.reset_to_default()
     # RNG inyectado por consistencia; v1.0 lo usa para futuras mejoras.
     _ = StdRng(seed=seed)
