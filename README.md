@@ -20,6 +20,39 @@ uv sync
 uv run animal
 ```
 
+### Windows
+
+Tres formas, de menos a más permanente:
+
+1. **Doble clic** sobre `scripts\animal.bat` desde el Explorador.
+   El wrapper detecta `uv` o `py -3.13` automáticamente y deja la
+   consola abierta al terminar.
+
+2. **PowerShell**:
+
+   ```powershell
+   .\scripts\animal.ps1                  # TUI
+   .\scripts\animal.ps1 --demo --seed 42 # demo
+   ```
+
+   Si te quejas de la política de ejecución, lanza una vez:
+
+   ```powershell
+   Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+   ```
+
+3. **Instalación como herramienta** (deja `animal.exe` en el PATH):
+
+   ```powershell
+   uv tool install .          # o:  pip install --user .
+   animal                     # ya disponible desde cualquier cmd / PowerShell
+   animal --demo --seed 42
+   ```
+
+   Para un acceso directo en el menú Inicio, crea un atajo a
+   `%USERPROFILE%\.local\bin\animal.exe` (uv) o
+   `%APPDATA%\Python\Scripts\animal.exe` (pip --user).
+
 ## Uso
 
 ```bash
