@@ -53,6 +53,47 @@ Tres formas, de menos a más permanente:
    `%USERPROFILE%\.local\bin\animal.exe` (uv) o
    `%APPDATA%\Python\Scripts\animal.exe` (pip --user).
 
+### Sin `uv`, con Python puro
+
+Si prefieres no usar `uv`, te basta con Python 3.13+ y `pip`. Tres
+caminos según lo que vayas a hacer:
+
+1. **Instalación editable, recomendado para desarrollo:**
+
+   ```bash
+   python3.13 -m venv .venv
+   source .venv/bin/activate          # Windows:  .venv\Scripts\activate
+   pip install -e .
+   python -m animal                   # o simplemente:  animal
+   python -m animal --demo --seed 42
+   ```
+
+   Para los gates de calidad añade el grupo dev: `pip install -e '.[dev]'`
+   no está disponible (usamos `dependency-groups` de PEP 735), instala
+   manualmente: `pip install pytest pytest-cov hypothesis ruff mypy
+   pre-commit`.
+
+2. **Instalación normal (usuario final):**
+
+   ```bash
+   pip install --user .
+   animal
+   python -m animal --demo --seed 42
+   ```
+
+3. **Sin instalar nada, ejecutar desde el repo:**
+
+   ```bash
+   pip install textual typer rich pydantic structlog platformdirs
+   PYTHONPATH=src python -m animal               # Linux / macOS
+   set "PYTHONPATH=src" && python -m animal      # Windows cmd
+   $env:PYTHONPATH = "src"; python -m animal     # PowerShell
+   ```
+
+Ambas formas (`python -m animal` y `animal`) son equivalentes: la
+primera usa `src/animal/__main__.py`, la segunda el entry-point
+declarado en `pyproject.toml`.
+
 ## Uso
 
 ```bash
